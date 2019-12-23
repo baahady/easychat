@@ -2,21 +2,17 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">chatroom</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    welcome to easy chat!
+    <div class="row justify-content-center" id="timeline">
+        <div class="col-md-4">
+            <form action="#">
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" maxlength="50" required></textarea>
                 </div>
-            </div>
+                    <button class="form-control" class="btn btn-default">send</button>
+            </form>
+        </div>
+        <div class="col-md-8">
+            timeline
         </div>
     </div>
 </div>
