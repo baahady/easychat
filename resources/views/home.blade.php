@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center" id="timeline">
         <div class="col-md-4">
-            <form action="#">
+            <form action="#" v-on:submit="postStatus">
                 <div class="form-group">
                     <textarea class="form-control" rows="5" maxlength="50" required></textarea>
                 </div>
