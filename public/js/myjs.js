@@ -1,9 +1,19 @@
 new Vue({
 	el:'#timeline',
+	data:{
+		post:'',
+	},
 	methods:{ 
 		postStatus(e){
 			e.preventDefault();
-			console.log('posted');
+			$.ajax({
+				url:'/posts',
+				type:'post',
+				dataType:'json',
+				data:{
+					'body':this.post
+				}
+			});
 		}
 	}
 });

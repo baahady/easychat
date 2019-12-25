@@ -6,7 +6,7 @@
         <div class="col-md-4">
             <form action="#" v-on:submit="postStatus">
                 <div class="form-group">
-                    <textarea class="form-control" rows="5" maxlength="50" required></textarea>
+                    <textarea class="form-control" rows="5" maxlength="50" v-model="post"></textarea>
                 </div>
                     <button class="form-control" class="btn btn-default">send</button>
             </form>
