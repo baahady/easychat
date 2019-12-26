@@ -2,6 +2,7 @@ new Vue({
 	el:'#timeline',
 	data:{
 		post:'',
+		posts:[]
 	},
 	methods:{ 
 		postStatus(e){
@@ -12,6 +13,13 @@ new Vue({
 				dataType:'json',
 				data:{
 					'body':this.post
+				},
+				success:function(data){
+					this.post=""
+					this.posts.unshift(data);
+				}.bind(this),
+				error:function(){
+					//
 				}
 			});
 		}

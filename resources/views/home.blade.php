@@ -12,7 +12,21 @@
             </form>
         </div>
         <div class="col-md-8">
-            timeline
+            <p v-if="!posts.length">no post yet</p>
+            <div class="post" v-if="posts.length">
+                <div class="media" v-for="post in posts" track-by="id">
+                    <div class="media-left">
+                        <img class="media-object">
+                    </div>
+                    <div class="media-body">
+                        <div class="user">
+                            <a href="#"><strong>@{{post.user.username}}</strong></a>
+                        </div>
+                        <p>@{{post.body}}</p>
+                    </div>
+                </div>
+                
+            </div>
         </div>
     </div>
 </div>
