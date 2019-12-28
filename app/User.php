@@ -28,6 +28,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $appends = [
+        'avatar',
+    ];
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -39,5 +43,14 @@ class User extends Authenticatable
 
     public function posts(){
         return $this->hasMany('app\Post');
+    }
+
+    public function getAvatar(){
+        //return 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=45&d=mm';
+        return 'https://www.gravatar.com/avatar/'.md5($this->email).'?s=45&d=mm';
+    }
+
+    public function getAvatarAttribute(){
+        return $this->getAvatar();
     }
 }
