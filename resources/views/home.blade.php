@@ -16,11 +16,11 @@
             <div class="post" v-if="posts.length">
                 <div class="media" v-for="post in posts" track-by="id">
                     <div class="media-left">
-                        <img class="media-object" v-bind:src="post.user.avatar">
+                        <img class="media-object" v-bind:src="post.user.avatar" style="padding-right: 5px">
                     </div>
                     <div class="media-body">
                         <div class="user">
-                            <a href="#"><strong>@{{post.user.username}}</strong></a>
+                            <a href="#"><strong>@{{post.user.username}}</strong></a> - @{{post.HumanCreatedAt}}
                         </div>
                         <p>@{{post.body}}</p>
                     </div>
