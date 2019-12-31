@@ -63,6 +63,23 @@ class User extends Authenticatable
         return route('user.index',$this);
     }
 
+    public function iisNot(User $user){
+        return $this->id !== $user->id;
+    }
+
+    public function isFollowing(User $user){
+        return (bool) $this->following->where('id',$user->id)->count();
+    }
+
+    public function canFollow(User $user){
+
+        if(!$this->iisNot($user)){
+            return false;
+        }
+        return !$this->isFollowing($user);
+
+    }
+
     public function following(){
         return $this->belongsToMany('App\User','follows','user_id','follower_id');
     }
