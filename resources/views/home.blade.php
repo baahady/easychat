@@ -20,7 +20,7 @@
                     </div>
                     <div class="media-body">
                         <div class="user">
-                            <a href="#"><strong>@{{post.user.username}}</strong></a> - @{{post.HumanCreatedAt}}
+                            <a :href="post.user.profileUrl"><strong>@{{post.user.username}}</strong></a> - @{{post.HumanCreatedAt}}
                         </div>
                         <p>@{{post.body}}</p>
                     </div>
