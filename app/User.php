@@ -62,4 +62,8 @@ class User extends Authenticatable
     public function getProfileUrlAttribute(){
         return route('user.index',$this);
     }
+
+    public function following(){
+        return $this->belongsToMany('App\User','follows','user_id','follower_id');
+    }
 }
