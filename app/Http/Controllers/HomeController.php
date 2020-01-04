@@ -24,6 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         //dd(\auth::user()->following);
+        dd(\Auth::user()->followers);
         return view('home');
     }
 }

@@ -18,4 +18,11 @@ class UserController extends Controller
 
     	return redirect()->back();
     }
+
+    public function unfollow(Request $request, User $user){
+    	if($request->user()->canUnfollow($user)){
+    		$request->user()->following()->detach($user);
+    	}
+    	return redirect()->back();
+    }
 }

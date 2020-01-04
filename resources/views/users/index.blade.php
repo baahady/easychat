@@ -6,7 +6,7 @@
 			<h3>{{$user->username}}</h3>
 			@if(Auth::user()->iisNot($user))
 				@if(Auth::user()->isFollowing($user))
-					unfollow
+					<a href="{{route('user.unfollow',$user)}}">unfollow</a>
 				@else
 					<a href="{{route('user.follow',$user)}}">follow</a>
 				@endif		
