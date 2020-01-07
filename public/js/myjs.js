@@ -2,7 +2,8 @@ new Vue({
 	el:'#timeline',
 	data:{
 		post:'',
-		posts:[]
+		posts:[],
+		limit:5,
 	},
 	methods:{ 
 		postStatus(e){
@@ -22,6 +23,26 @@ new Vue({
 					//
 				}
 			});
+		},
+		getPosts(){
+			$.ajax({
+				url:'/posts',
+				dataType:'json',
+				type:'get',
+				data:{
+					limit: this.limit
+				},
+				success:function(data){
+					this.posts=data.posts
+				}.bind(this),
+			});
 		}
+	},
+	mounted(){
+		this.getPosts();
+
+		setInterval(function(){
+			this.getPosts();
+		}.bind(this),1000);
 	}
 });
