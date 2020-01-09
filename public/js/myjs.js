@@ -3,7 +3,8 @@ new Vue({
 	data:{
 		post:'',
 		posts:[],
-		limit:5,
+		limit:2,
+		total:0
 	},
 	methods:{ 
 		postStatus(e){
@@ -34,8 +35,14 @@ new Vue({
 				},
 				success:function(data){
 					this.posts=data.posts
+					this.total=data.total
 				}.bind(this),
 			});
+		},
+		getMorePosts(e){
+			e.preventDefault();
+			this.limit=this.limit+this.limit;
+			this.getPosts();
 		}
 	},
 	mounted(){
