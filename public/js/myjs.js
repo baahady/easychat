@@ -3,7 +3,7 @@ new Vue({
 	data:{
 		post:'',
 		posts:[],
-		limit:2,
+		limit:10,
 		total:0
 	},
 	methods:{ 
@@ -50,6 +50,6 @@ new Vue({
 
 		setInterval(function(){
 			this.getPosts();
-		}.bind(this),1000);
+		}.bind(this),5000);
 	}
 });

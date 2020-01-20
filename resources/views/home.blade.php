@@ -14,7 +14,7 @@
         <div class="col-md-8">
             <p v-if="!posts.length">no post yet</p>
             <div class="post" v-if="posts.length">
-                <div class="media" v-for="post in posts" track-by="id">
+                <div class="media" v-for="post in posts" track-by="id" transition="expand">
                     <div class="media-left">
                         <img class="media-object" v-bind:src="post.user.avatar" style="padding-right: 5px">
                     </div>
